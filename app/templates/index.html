@@ -1,13 +1,14 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>To do list</title>
-</head>
-<body>
-  <p>
-      Hello, {{ username }}!
-  </p>
+{% extends "base.html" %}
 
-</body>
-</html>
+{% block content %}
+<br>
+<div id="news block" class="p-3">
+    <ul class="list-group">
+        {% for new in news %}
+            <li class="list-group-item">
+                {{ new }}
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
