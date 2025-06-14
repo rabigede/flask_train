@@ -14,9 +14,7 @@
       Hello, {{ username }}!
     </p>
     {% else %}
-    <p>
-      Hello, stranger!
-    </p>
+    <div class="p-5"> <a href='/login'>Войти</a> </div>
     {% endif %}
 
   {% block content %}{% endblock %}

@@ -18,3 +18,7 @@ def index():
 @app.route('/albums/<int:album_number>')
 def albums(album_number):
     return (f"This is {album_number} album")
+
+@app.route("/login")
+def login():
+    return render_template('login.html')
