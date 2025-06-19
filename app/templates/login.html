@@ -1,5 +1,21 @@
 {% extends base.html %}
 {% block content %}
 
-
+<p> Sign In</p>
+<form>
+    <p>
+        {{ form.hidden_tag }}
+    </p>
+    <p>
+        {{ form.login.label }} <br>
+        {{ form.login(size=32) }}
+    </p>
+    <p>
+        {{ form.password.label }}
+        {{ form.passwords(size=32) }}
+    </p>
+    <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+    <p>{{ form.submit() }}</p>
+</form>
 {% endblock %}
+

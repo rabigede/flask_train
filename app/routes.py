@@ -1,5 +1,7 @@
 from flask import render_template
 from app import app
+from app.forms import userLoginForm
+
 
 @app.route('/index')
 @app.route('/')
@@ -21,4 +23,5 @@ def albums(album_number):
 
 @app.route("/login")
 def login():
-    return render_template('login.html')
+    form = userLoginForm()
+    return render_template('login.html', form=form)
