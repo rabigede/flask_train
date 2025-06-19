@@ -14,9 +14,19 @@
       Hello, {{ username }}!
     </p>
     {% else %}
-    <div class="p-5"> <a href='/login'>Войти</a> </div>
+    <div class="p-5"> <a href="{{ url_for('login') }}">Войти</a> </div>
     {% endif %}
+  <hr>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
 
+          {% for message in messages %}
+            <script>
+          alert('{{ message }}')
+          </script>
+          {% endfor %}
+      {% endif %}
+    {% endwith %}
   {% block content %}{% endblock %}
 </body>
 </html>
