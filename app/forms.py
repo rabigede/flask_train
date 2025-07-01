@@ -7,3 +7,7 @@ class userLoginForm(FlaskForm):
     password = PasswordField("Пароль: ", validators=[DataRequired()])
     remember_me = BooleanField("Запомнить меня")
     submit = SubmitField("Войти")
+
+class newBookForm(FlaskForm):
+    name = StringField("Title: ", validators=[DataRequired()])
+    author = StringField("Author: ", validators=[DataRequired()])
