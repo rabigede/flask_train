@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<p>
+  Add new book to your shelf.
+</p>
+
+<form action="" method="POST" novalidate>
+  <br>
+<p>
+  {{ form.hidden_tag() }}
+</p>
+
+<p>
+  {{ form.name.label }} <br>
+  {{ form.name(size=32) }}
+</p>
+
+  <p>
+  {{ form.author.label }} <br>
+  {{ form.author(size=32) }}
+</p>
+  <p>{{ form.submit() }}</p>
+
+</form>
+
+{% endblock %}

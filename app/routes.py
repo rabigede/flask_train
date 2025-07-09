@@ -1,6 +1,6 @@
 from flask import render_template, flash, redirect, url_for
 from app import app
-from app.forms import userLoginForm
+from app.forms import userLoginForm, newBookForm
 
 
 @app.route('/index')
@@ -20,6 +20,14 @@ def index():
 @app.route('/albums/<int:album_number>')
 def albums(album_number):
     return (f"This is {album_number} album")
+
+@app.route('/bookshelf', methods=['GET', 'POST'])
+def bookshelf():
+    form = newBookForm()
+    if form.validate_on_submit():
+        flash(f'книга {form.name} добавлена на вашу полку')
+        return redirect(url_for('bookshelf'))
+    return render_template('bookshelf.html', form=form)
 
 
 @app.route("/login", methods=['GET', 'POST'])

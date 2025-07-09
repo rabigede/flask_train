@@ -11,3 +11,4 @@ class userLoginForm(FlaskForm):
 class newBookForm(FlaskForm):
     name = StringField("Title: ", validators=[DataRequired()])
     author = StringField("Author: ", validators=[DataRequired()])
+    submit = SubmitField("Добавить")
